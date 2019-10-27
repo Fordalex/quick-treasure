@@ -1,0 +1,468 @@
+.page-wrapper {
+    display:flex;
+    justify-content:center;
+}
+
+.very-small-text {
+    font-size:7wpx;
+}
+
+.game-container {
+    width:400px;
+    height:500px;
+    border:solid black 1px;
+    border-radius:2px;
+    box-shadow:0px 0px 5px 5px rgb(200,200,200);
+    background-image: url('../images/background-grass.png');
+}
+
+.roof {
+    position:absolute;
+    top:0;
+    left:0;
+    height:60px;
+    width:358px;
+    border-radius:2px;
+    background-size: 100%;
+    z-index: 5;
+}
+
+#level1-roof {
+    background-image: url('../images/roof.png');
+}
+
+#level2-roof {
+    background-image: url('../images/roof-2.png');
+}
+
+#level3-roof {
+    background-image: url('../images/roof-3.png');
+}
+
+#level4-roof {
+    background-image: url('../images/roof-4.png');
+}
+
+#level5-roof {
+    background-image: url('../images/roof-2.png');
+}
+
+.level-container {
+    position:relative;
+    height:60px;
+    margin:20px;
+    margin-top:33px;
+    border-radius:2px;
+    background-image: url('../images/level-background.png');
+    overflow: hidden;
+}
+
+.level-container-odd {
+    position:relative;
+    height:60px;
+    margin:20px;
+    margin-top:33px;
+    border-radius:2px;
+    background-image: url('../images/level-background-invert.png');
+    overflow: hidden;
+}
+
+.text-go-to-start {
+    position:absolute;
+    display:flex;
+    justify-content:center;
+}
+
+.please-go-to-start {
+    background-color:gray;
+}
+
+/*  level classes  */
+
+.start {
+    height:5px;
+    width:20px;
+    background-color:rgb(250, 208, 42);
+    z-index:10;
+}
+
+.finish {
+    height:5px;
+    width:30px;
+    background-color:blue;
+}
+
+.bad-collision {
+    background-color:red;
+}
+
+.level-complete {
+    background-color:#e1f5d7;
+}
+
+.start-enter {
+    background-color: #0f3711;
+}
+
+.start-lose {
+    background-color:red;
+}
+
+/* puzzles */
+.letters {
+    display:inline-block;
+    background-color:lightgray;
+    border-radius:10px;
+    border:solid black 1px;
+    width:50px;
+    height:50px;
+    text-align: center;
+    align-items:center;
+    padding:10px;
+    margin:5px;
+    box-shadow:inset 0px 0px 5px 5px rgba(0,0,0,0.2);
+}
+
+/* generic */
+
+.collision-color {
+    background-color: rgba(236, 22, 22, 0.62);
+    box-shadow: 0px 0px 5px 5px rgba(252, 133, 133, 0.4);
+}
+
+/* level 1 collisions */
+
+.level1-start {
+    position: absolute;
+    top:0;
+    left:5px;
+}
+
+.level1-collision {
+    position: absolute;
+    top:0;
+    left:60px;
+    height:25px;
+    width:30px;
+    border-radius:0px 0px 5px 5px;
+}
+
+.level1-collision-1 {
+    position: absolute;
+    top:35px;
+    left:130px;
+    height:25px;
+    width:30px;
+    border-radius:5px 5px 0px 0px;
+}
+
+.level1-collision-2 {
+    position: absolute;
+    top:0px;
+    left:200px;
+    height:25px;
+    width:30px;
+    border-radius:0px 0px 5px 5px;
+}
+
+.level1-collision-3 {
+    position: absolute;
+    top:35px;
+    left:270px;
+    height:25px;
+    width:30px;
+    border-radius:5px 5px 0px 0px;
+}
+
+.level1-finsih {
+    position: absolute;
+    bottom:0;
+    right:0;
+}
+
+/* level 2 collisions */
+
+.level2-start {
+    position: absolute;
+    top:0;
+    right:5px;
+}
+
+.level2-collision {
+    position: absolute;
+    top:0;
+    left:60px;
+    height:25px;
+    width:30px;
+    animation:animation-slide 1s infinite alternate;
+    border-radius:5px;
+}
+.level2-collision-1 {
+    position: absolute;
+    top:35px;
+    left:130px;
+    height:25px;
+    width:30px;
+    animation:animation-slide 1s infinite alternate;
+    animation-delay: 1s;
+    border-radius:5px;
+}
+
+.level2-collision-2 {
+    position: absolute;
+    top:35px;
+    left:200px;
+    height:25px;
+    width:30px;
+    animation:animation-slide 1s infinite alternate;
+    border-radius:5px;
+}
+
+.level2-collision-3 {
+    position: absolute;
+    top:35px;
+    left:270px;
+    height:25px;
+    width:30px;
+    animation:animation-slide 1s infinite alternate;
+    animation-delay: 1s;
+    border-radius:5px;
+}
+
+.level2-finsih {
+    position: absolute;
+    bottom:0;
+    left:0;
+}
+
+@keyframes animation-slide {
+    0% {top:0;}
+    100% {top:35px;}
+}
+
+/* level 3 collisions */
+
+.level3-start {
+    position: absolute;
+    top:0;
+    left:5px;
+}
+
+.level3-collision-0 {
+    position: absolute;
+    top:0px;
+    left:70px;
+    height:60px;
+    width:3px;
+    animation:animation-spin 2s infinite reverse linear;
+}
+
+.level3-collision {
+    position: absolute;
+    top:0;
+    left:117px;
+    height:25px;
+    width:10px;
+    animation:animation-slide 0.5s infinite alternate;
+}
+
+.level3-collision-1 {
+    position: absolute;
+    top:0px;
+    left:170px;
+    height:60px;
+    width:3px;
+    animation:animation-spin 2s infinite linear;
+}
+
+.level3-collision-2 {
+    position: absolute;
+    top:35px;
+    left:222px;
+    height:25px;
+    width:10px;
+    animation:animation-slide 0.5s infinite alternate;
+}
+
+.level3-collision-3 {
+    position: absolute;
+    top:0px;
+    left:280px;
+    height:60px;
+    width:3px;
+    animation:animation-spin 2s infinite reverse linear;
+}
+
+.level3-finsih {
+    position: absolute;
+    bottom:0;
+    right:0;
+}
+
+/* level 4 collisions */
+
+.level4-start {
+    position: absolute;
+    top:0;
+    right:5px;
+}
+
+.level4-collision-0 {
+    position: absolute;
+    top: 20px;
+    left: 60px;
+    height: 10px;
+    width: 100px;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.level4-collision {
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+    height: 40px;
+    width: 10px;
+    border-radius: 5px 0px 0px 0px;
+}
+
+.level4-collision-1 {
+    position: absolute;
+    bottom: 12px;
+    left: 100px;
+    height: 5px;
+    width: 80px;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.level4-collision-2 {
+    position: absolute;
+    top: 0px;
+    left: 280px;
+    height: 40px;
+    width: 3px;
+    animation: top_bottom 1s infinite alternate ease-in-out;
+}
+
+.level4-collision-3 {
+    position: absolute;
+    top: 0px;
+    left: 180px;
+    height: 48px;
+    width: 10px;
+    border-radius: 0px 0px 5px 0px;
+}
+
+.level4-collision-4 {
+    position: absolute;
+    top: 0px;
+    left: 280px;
+    height: 40px;
+    width: 3px;
+    animation: top_bottom 2s infinite alternate ease-in-out;
+    animation-delay: 0.5s;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.level4-collision-5 {
+    position: absolute;
+    top: 0px;
+    left: 260px;
+    height: 40px;
+    width: 3px;
+    animation: top_bottom 1s infinite alternate ease-in-out;
+    animation-delay: 0.25s;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.level4-collision-6 {
+    position: absolute;
+    top: 0px;
+    left: 260px;
+    height: 40px;
+    width: 3px;
+    animation: top_bottom 2s infinite alternate ease-in-out;
+    animation-delay: 0.75s;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.level4-collision-7 {
+    position: absolute;
+    top: 0px;
+    left: 240px;
+    height: 40px;
+    width: 3px;
+    animation: top_bottom 1s infinite alternate ease-in-out;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.level4-collision-8 {
+    position: absolute;
+    top: 0px;
+    left: 240px;
+    height: 40px;
+    width: 3px;
+    animation: top_bottom 2s infinite alternate ease-in-out;
+    animation-delay: 0.5s;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.level4-finsih {
+    position: absolute;
+    bottom:0;
+    left:0;
+}
+
+
+/* third puzzle modal */
+
+.spawner {
+    width:50px;
+    height:50px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    float:left;
+}
+
+.shooter-target {
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background-color:rgb(158, 218, 240);
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    cursor:pointer;
+}
+
+.shooter-target:active {
+    width:45px;
+    height:45px;
+}
+
+@keyframes animation-slide {
+    0% {top:0;}
+    100% {top:35px;}
+}
+
+@keyframes animation-spin {
+    0% {transform: rotateZ(0deg)}
+    100% {transform: rotateZ(360deg)}
+}
+
+@keyframes top_bottom {
+    0% {top: -30px;}
+    100% {top: 50px;}
+}
+
+/*  All the class for a level to start */
+
+.level-background-start {
+    background-color:rgb(84, 84, 84);
+    cursor: url('../images/in-game-mouse.png') 10 10, auto;
+}
+
+.level-start-colour {
+    background-color:greenyellow;
+}
+

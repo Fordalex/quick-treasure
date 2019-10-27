@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- link to css -->
+    <link rel="stylesheet" href="assets/style/style.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+    <title>Puzzle Maze</title>
+
+</head>
+
+<body>
+
+    <h1 class="text-center my-2">Quick Treasure</h1>
+
+    <div class="d-flex justify-content-center align-items-center">
+        <i class="fas fa-stopwatch mx-1 text-black-50"></i>
+        <p class="p-smaller-font m-0"><span id="timer-min"></span><span class="mx-1">:</span><span
+                id="timer-sec"></span></p>
+    </div>
+
+    <div class="page-wrapper">
+        <div class="game-container">
+            <div class="level-container level1-background" id="level1">
+                <div class="start level1-start d-flex justify-content-center align-items-center" id="level1"></div>
+                <div class="finish level1-finsih" id="level1"></div>
+                <div class="bad-collision level1-collision collision-color" id="level1"></div>
+                <div class="bad-collision level1-collision-1 collision-color" id="level1"></div>
+                <div class="bad-collision level1-collision-2 collision-color" id="level1"></div>
+                <div class="bad-collision level1-collision-3 collision-color" id="level1"></div>
+                <div class="roof" id="level1-roof"></div>
+            </div>
+            <div class="level-container level-container-odd level2-background" id="level2">
+                <div class="start level2-start" id="level2"></div>
+                <div class="finish level2-finsih" id="level2"></div>
+                <div class="bad-collision level2-collision collision-color" id="level2"></div>
+                <div class="bad-collision level2-collision-1 collision-color" id="level2"></div>
+                <div class="bad-collision level2-collision-2 collision-color" id="level2"></div>
+                <div class="bad-collision level2-collision-3 collision-color" id="level2"></div>
+                <div class="roof level2-roof" id="level2-roof"></div>
+            </div>
+            <div class="level-container level3-background" id="level3">
+                <div class="start level3-start" id="level3"></div>
+                <div class="finish level3-finsih" id="level3"></div>
+                <div class="bad-collision level3-collision-0 collision-color" id="level3"></div>
+                <div class="bad-collision level3-collision collision-color" id="level3"></div>
+                <div class="bad-collision level3-collision-1 collision-color" id="level3"></div>
+                <div class="bad-collision level3-collision-2 collision-color" id="level3"></div>
+                <div class="bad-collision level3-collision-3 collision-color" id="level3"></div>
+                <div class="roof" id="level3-roof"></div>
+            </div>
+            <div class="level-container level4-background" id="level4">
+                <div class="start level4-start" id="level4"></div>
+                <div class="finish level4-finsih" id="level4"></div>
+                <div class="bad-collision level4-collision-0 collision-color" id="level4"></div>
+                <div class="bad-collision level4-collision collision-color" id="level4"></div>
+                <div class="bad-collision level4-collision-1 collision-color" id="level4"></div>
+                <div class="bad-collision level4-collision-2 collision-color" id="level4"></div>
+                <div class="bad-collision level4-collision-3 collision-color" id="level4"></div>
+                <div class="bad-collision level4-collision-4 collision-color" id="level4"></div>
+                <div class="bad-collision level4-collision-5 collision-color" id="level4"></div>
+                <div class="bad-collision level4-collision-6 collision-color" id="level4"></div>
+                <div class="bad-collision level4-collision-7 collision-color" id="level4"></div>
+                <div class="bad-collision level4-collision-8 collision-color" id="level4"></div>
+                <div class="roof" id="level4-roof"></div>
+            </div>
+            <div class="level-container level5-background" id="level5">
+
+
+
+
+                <div class="roof" id="level5-roof"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- puzzle modal -->
+
+    <!-- First puzzle -->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="enterNameModal"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Open Treasure</h5>
+                    <p class="m-0">Remove the letters.</p>
+                </div>
+                <div class="modal-body">
+                    <div id="puzzle-one-container">
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Second puzzle -->
+
+    <div class="modal fade" id="puzzleModalTwo" tabindex="-1" role="dialog" aria-labelledby="enterNameModal"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Quick Maths</h5>
+
+                </div>
+                <div class="modal-body">
+                    <div id="puzzle-two-container">
+                        <div id="math-generator"></div>
+                        <div id="spawn-math">
+                            <input type="text" id="playersAnswer" onkeyup="correctMath()">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Third puzzle -->
+
+    <div class="modal fade" id="puzzleModalThree" tabindex="-1" role="dialog" aria-labelledby="enterNameModal"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Remove The Targets</h5>
+
+                </div>
+                <div class="modal-body">
+                    <div id="puzzle-third-container">
+                        
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- link to javascript -->
+    <script src="assets/javascript/javascript.js"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
